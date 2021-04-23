@@ -1,0 +1,275 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.content {
+  padding: 16px;
+}
+
+/* Форма вход/регистрация */
+.auth-form {
+  width: 250px;
+  margin: 20px auto;
+  border-radius: 6px;
+}
+/* Форма вход/регистрация  END*/
+
+/* Шапка сайта */
+.ts-header {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  font-size: 14px;
+  z-index: 100;
+  position: fixed !important;
+  left: 0;
+  right: 0;
+  height: 55px;
+}
+
+.ts-header .navbar-brand {
+  font-size: 18px;
+  color: #ffc430 !important;
+}
+
+.ts-header .navbar-brand:hover {
+  color: #ffcd58 !important;
+}
+
+.ts-header .nav-item {
+  padding: 0 5px 0 5px;
+}
+
+.ts-header a {
+  font-size: 16px;
+  color: #ffffff !important;
+}
+
+.ts-header a:hover {
+  color: #ffcd58 !important;
+}
+
+.ts-header button {
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 14px;
+  display: inline-block;
+  color: #ffffff !important;
+  border: 2px solid #ffc430 !important;
+}
+
+.ts-header button:hover {
+  background: #ffcd58;
+  color: #151515;
+}
+
+.under-header {
+  padding-top: 55px;
+}
+/* Шапка сайта END */
+
+/* Форма ввода с темным фоном */
+.ts-form-group-dark {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.ts-form-group-dark button {
+  background: #ffc430;
+  border: 0;
+  padding: 6px 16px;
+  color: #151515;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.ts-form-group-dark button:hover {
+  background: #ffcd58;
+  color: #151515;
+}
+/* Форма ввода с темным фоном END */
+
+/* Карточка с информацией */
+.content-card {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 0px 2px 15px rgba(0,0,0,0.3);
+  margin-bottom: 16px;
+}
+
+.add-to-basket {
+  cursor: pointer;
+  background-color: #ffc430;
+}
+
+.add-to-basket:hover {
+  background-color: #ffcd58;
+}
+
+.add-to-basket:active {
+  background-color: #ffc430;
+}
+/* Карточка с информацией END */
+
+/* Боковое меню */
+.right-menu {
+  padding: 16px 16px 16px 16px;
+
+}
+/* Боковое меню END */
+
+/* Боковое меню */
+.right-card {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 0px 2px 15px rgba(0,0,0,0.3);
+}
+
+.right-card a {
+  font-size: 16px;
+  color: #000000 !important;
+}
+
+.right-card a:hover {
+  color: #ffc430 !important;
+}
+/* Боковое меню END */
+
+/* Карточка для корзины */
+.basket-card {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 0px 2px 15px rgba(0,0,0,0.3);
+}
+
+.delete-icon {
+  color: #9f0000;
+  cursor: pointer;
+}
+
+.edit-icon {
+  color: #000000;
+  cursor: pointer;
+}
+
+.edit-icon:hover {
+  color: #ffc430;
+}
+
+.delete-icon:hover {
+  color: #e20000;
+}
+/* Карточка для корзины END */
+
+/* Действия в карточке */
+.action-buttons {
+  text-align: right;
+}
+
+.action-buttons button {
+  background: #ffc430;
+  margin-left: 10px;
+  padding: 6px 16px;
+  color: #151515;
+  transition: 0.4s;
+  border-radius: 4px;
+  border-color: #deab18;
+}
+
+.action-buttons button:hover {
+  background: #ffcd58 !important;
+  color: #151515;
+}
+/* Действия в карточке END */
+
+/* Для модальных окон */
+.ts-modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.ts-modal-content {
+  width: 1000px;
+  background-color: white;
+  position: absolute;
+  top: 30%;
+  left: calc(50% - 500px);
+  padding: 20px;
+  box-shadow: 0px 2px 15px rgba(0,0,0,0.3);
+  border-radius: 5px;
+  margin: 0 auto;
+}
+/* Для модальных окон END */
+
+/* Для сообщений об ошибках */
+.ts-modal-error {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.ts-modal-error-content {
+  width: 400px;
+  background-color: white;
+  position: absolute;
+  top: 30%;
+  left: calc(50% - 200px);
+  padding: 20px;
+  box-shadow: 0px 2px 15px rgba(0,0,0,0.3);
+  border-radius: 5px;
+  margin: 0 auto;
+}
+/* Для сообщений об ошибках END */
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

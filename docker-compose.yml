@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  postgres:
+    container_name: smartphones-store-pgdb
+    image: postgres:11
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-docker}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-docker}
+      POSTGRES_DB: ${POSTGRES_DB:-docker}
+    volumes:
+       - ./ddl.sql:/docker-entrypoint-initdb.d/ddl.sql
+    ports:
+      - 5432:5432
+    networks:
+      - smartphones-store
+    restart: unless-stopped
+  smartphones-store-back:
+    container_name: smartphones-store-back
+    build:
+      context: smartphones-store-back
+      dockerfile: Dockerfile
+    image: smartphones-store-back:latest
+    depends_on:
+      - postgres
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/docker?currentSchema=public
+    ports:
+      - 8080:8080
+    command: java -jar ./techstore-1.0.jar
+    networks:
+      - smartphones-store
+  smartphones-store-front:
+    container_name: smartphones-store-front
+    build:
+      context: smartphones-store-front
+      dockerfile: Dockerfile
+    image: smartphones-store-front:latest
+    depends_on:
+      - smartphones-store-back
+    ports:
+      - 80:80
+    networks:
+      - smartphones-store
+
+networks:
+  smartphones-store:
+    driver: bridge
+
+volumes:
+    postgres:
